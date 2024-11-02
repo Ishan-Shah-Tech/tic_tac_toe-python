@@ -1,0 +1,29 @@
+/* styles.css */
+body {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    font-family: Arial, sans-serif;
+    margin: 0;
+}
+
+.toolbar {
+    margin: 10px;
+}
+
+canvas {
+    border: 1px solid #000;
+    cursor: crosshair;
+}
+
+/* Custom cursor preview dot */
+#cursorPreview {
+    position: absolute;
+    width: 10px; /* Initial size, dynamically updated */
+    height: 10px; /* Initial size, dynamically updated */
+    border-radius: 50%;
+    background-color: #000000; /* Initial color, dynamically updated */
+    pointer-events: none; /* So it doesn’t interfere with drawing */
+    transform: translate(-50%, -50%); /* Centers the dot on cursor */
+    display: none; /* Initially hidden */
+}

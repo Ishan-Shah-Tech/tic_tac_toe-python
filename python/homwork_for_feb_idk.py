@@ -1,0 +1,5 @@
+input_one = input("Enter number: ")
+input_one_number_verification = int(input_one)
+input_two = input("Enter one more number: ")
+input_two_number_verification = int(input_two)
+print(input_one_number_verification + input_two_number_verification)

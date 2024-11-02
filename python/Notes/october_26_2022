@@ -1,0 +1,53 @@
+Step 0:
+    Get the server up and running and connect to it. (Complete)
+Step 1:
+    Access the web server. (Complete)
+Step 2:
+    Learn how to change files on the server.
+Step 3:
+    Learn how to copy files from ANY computer to server.
+Step 4:
+PHOTOSHOP!!!!!!!!!!!!!!!!
+
+
+
+-Q What is a server?
+-A A server is a computer that could be anywhere and you connect to it.
+
+-Q What all can you do on a server?
+-A Pretty much anything.
+
+-Q What is SSH used for?
+-A SSH allows you to log in to servers.
+
+-Q What is Apache?
+-A Apache allows you to run websites.
+
+-Q What is FTP?
+-A FTP stands for File Tranfer Protocol. FTP is a type of server that lets you transfer files.
+
+-Q What is nano? 
+-A nano allows you to edit a writable file.
+
+
+
+-Q how to connect to ftp server?
+-A Using FILEZILLLA
+
+-Q how to update files on the web server (webserver is a server that runs the website.)?
+-A Open FileZilla, connect to server, go in to website folder (on left & right) then drag file from left to right.
+
+-Q How to uninstall on Mac?
+-A Find it in the applicatons tab, and delete it.
+
+-Q How to link from one website to another?
+-A "<a href="(file name)">(Text)</a>"
+
+-Q How to insert an image into a website?
+-A <img src="(image.type)">
+
+-Q How to build something in photoshop and bring it into my website?
+-A 
+
+-Q What are the two ways to use Javascript in a website?
+-A By putting the javascript code inside a script tag in the html file or by putting the javascript code in its own file and importing it into the html file.

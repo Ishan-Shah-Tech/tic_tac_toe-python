@@ -1,0 +1,42 @@
+<html>
+    <head>
+        <script>
+            let number_one = 0
+            let number_two = 0
+            let total = 0
+            function multiply() {
+                number_one = document.getElementById('number_one');
+                number_two = document.getElementById('number_two');
+                result = document.getElementById('result');
+                
+                total = number_one.value * number_two.value
+                result.value = total
+                
+            }
+            function divide() {
+                
+            }
+            function add() {
+                
+            }
+            function subtract() {
+                
+            } 
+        </script>
+    </head>
+    <body>
+        <h2><p id="head">Poop's April 11 Class Lesson</p></h2>
+        <p id="demo">A Paragraph.</p>
+        <p id="quiz">POP QUIZ - change this to POOP QUIZ.</p>
+        
+        <input type="text" name="number_one" id="number_one"/>
+        <input type="text" name="number_two" id="number_two"/>
+        <input type="text" name="result" id="result" disabled>
+        
+                <br>
+        <button type="button" onclick="subtract()">Subtract</button>
+        <button type="button" onclick="add()">Add</button>
+        <button type="button" onclick="multiply()">Multiply</button>
+        <button type="button" onclick="divide()">Divide</button>
+    </body>
+</html> 

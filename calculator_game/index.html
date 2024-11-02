@@ -1,0 +1,119 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Math Quiz</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+        }
+        .container {
+            display: flex;
+            justify-content: space-between;
+            width: 500px;
+        }
+        .calculator, .quiz {
+            width: 45%;
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <div class="quiz">
+            <h1>Math Quiz</h1>
+            <p>You have 60 seconds to answer as many addition and subtraction questions as you can.</p>
+            <p id="question"></p>
+            <input id="answer" type="number">
+            <button onclick="submitAnswer()">Submit</button>
+            <button onclick="restartQuiz()">Restart</button>
+            <p id="score"></p>
+        </div>
+        <div class="calculator">
+            <h1>Calculator</h1>
+            <input id="num1" type="number">
+            <select id="operation">
+                <option value="+">+</option>
+                <option value="-">-</option>
+                <option value="*">*</option>
+                <option value="/">/</option>
+            </select>
+            <input id="num2" type="number">
+            <button onclick="calculate()">Calculate</button>
+            <p id="calculation"></p>
+        </div>
+    </div>
+    <script>
+        var score = 0;
+        var correctAnswer;
+        var startTime = Date.now();
+
+        function generateQuestion() {
+            var num1 = Math.floor(Math.random() * 300) + 1;
+            var num2 = Math.floor(Math.random() * 300) + 1;
+            var operation = Math.random() < 0.5 ? '+' : '-';
+            if (operation === '+') {
+                correctAnswer = num1 + num2;
+            } else {
+                if (num1 < num2) {
+                    var temp = num1;
+                    num1 = num2;
+                    num2 = temp;
+                }
+                correctAnswer = num1 - num2;
+            }
+            document.getElementById('question').textContent = "What is " + num1 + " " + operation + " " + num2 + "?";
+        }
+
+        function submitAnswer() {
+            var userAnswer = parseInt(document.getElementById('answer').value);
+            if (userAnswer === correctAnswer) {
+                score++;
+                alert("Correct!");
+            } else {
+                score--;
+                alert("Wrong. The correct answer is " + correctAnswer + ".");
+            }
+            document.getElementById('score').textContent = "Your score is: " + score;
+            if (Date.now() - startTime < 60000) {
+                generateQuestion();
+            } else {
+                alert("Time's up!");
+            }
+        }
+
+        function restartQuiz() {
+            score = 0;
+            startTime = Date.now();
+            generateQuestion();
+            document.getElementById('score').textContent = "Your score is: " + score;
+        }
+
+        function calculate() {
+            var num1 = parseFloat(document.getElementById('num1').value);
+            var num2 = parseFloat(document.getElementById('num2').value);
+            var operation = document.getElementById('operation').value;
+            var result;
+            switch (operation) {
+                case '+':
+                    result = num1 + num2;
+                    break;
+                case '-':
+                    result = num1 - num2;
+                    break;
+                case '*':
+                    result = num1 * num2;
+                    break;
+                case '/':
+                    if (num2 != 0) {
+                        result = num1 / num2;
+                    } else {
+                        result = "Error! Division by zero is not allowed.";
+                    }
+                    break;
+            }
+            document.getElementById('calculation').textContent = "Result: " + result;
+        }
+
+        generateQuestion();
+    </script>
+</body>
+</html>
